@@ -29,3 +29,8 @@ Route::get('/rota1', function(){
 Route::get('/rota2', function(){
     return redirect()->route('site.rota1');
 })->name('site.rota2');
+
+//Rota fallback, pag 404 not found
+Route::fallback(function(){
+    echo "A rota acessada não existe, <a href='/'>clique</a> aqui para ir para pagina inicial";
+});
