@@ -9,10 +9,9 @@
 
 {{-- @dd($fornecedores) --}}
 
-@if(count($fornecedores) > 0 && count($fornecedores) < 10)
-    <h3>alguns fornecedores cadastrados</h3>
-@elseif(count($fornecedores) > 10)
-    <h3>Exite mais de 10 fornecedores cadastrados</h3>
-@else
-    <h3>Não existe fornecedores cadastrados</h3>
-@endif
+Fornecedor: {{$fornecedores[0]['nome']}}<br>
+Status: {{$fornecedores[0]['status']}}
+
+@unless($fornecedores[0]['status'] == 'S')
+    <h3>Fornecedor inativo</h3>
+@endunless
