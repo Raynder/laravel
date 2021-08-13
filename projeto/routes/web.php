@@ -16,7 +16,7 @@ Route::get("/contato", "ContatoController@principal")->name('site.contato');
 Route::prefix('/app')->group(function(){ 
     Route::get('/login', function(){echo('teste');})->name('app.login');
     Route::get('/clientes', function(){echo('teste');})->name('app.clientes');
-    Route::get('/fornecedores', function(){echo('teste');})->name('app.fornecedores');
+    Route::get('/fornecedores', 'FornecedorController@index')->name('app.fornecedores');
     Route::get('/produtos', function(){echo('teste');})->name('app.produtos');
 });
 
