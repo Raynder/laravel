@@ -20,7 +20,6 @@ class FornecedorController extends Controller
             ],
             2 => [
                 'nome' =>'fornecedor 3',
-                'status' => 'N'
             ]
         ];
 
