@@ -23,6 +23,9 @@ class FornecedorController extends Controller
                 'status' => 'N'
             ]
         ];
+
+        echo isset($fornecedores[1]['cnpj']) ? 'cnpj informado' : 'cnpj não informado';
+
         return view('app.fornecedor.index', compact('fornecedores'));
     }
 }
