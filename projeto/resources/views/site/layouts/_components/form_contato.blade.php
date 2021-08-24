@@ -1,3 +1,7 @@
+
+<pre>
+{{print_r($errors)}}
+</pre>
 <form action="{{route('site.contato')}}" method="post">
     @csrf
     <input type="text" name="nome" placeholder="Nome" class="{{ $class }}">

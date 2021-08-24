@@ -12,7 +12,6 @@ class ContatoController extends Controller
         // echo("<pre>");
         // print_r($request->input('nome'));
         // echo("</pre>");
-        // return view('site.contato', ['titulo' => 'Contato2']);
 
         // $contato = new SiteContato();
         // $contato->nome = $request->input('nome');
@@ -27,10 +26,26 @@ class ContatoController extends Controller
         // $contato->fill($request->all());
         // $contato->save();
 
-        $contato = new SiteContato();
-        $contato->create($request->all());
+        // $contato = new SiteContato();
+        // $contato->create($request->all());
 
         //Create e Fill só funcionam caso o $fillable esteja definido no model
+
+        return view('site.contato', ['titulo' => 'Contato2']);
+
+    }
+
+    public function salvar(Request $request){
+
+        $request->validate([
+            'nome' => 'required',
+            'email' => 'required',
+            'telefone' => 'required',
+            'motivo_contato' => 'required',
+            'mensagem' => 'required'
+        ]);
+
+        //SiteContato::create($request->all());
 
     }
 }

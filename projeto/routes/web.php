@@ -8,7 +8,7 @@ Route::get("/","PrincipalController@principal")->name('site.index');
 Route::get("/sobre-nos", "SobreNosController@principal")->name('site.sobrenos');
 
 Route::get("/contato", "ContatoController@principal")->name('site.contato');
-Route::post("/contato", "ContatoController@principal")->name('site.contato');
+Route::post("/contato", "ContatoController@salvar")->name('site.contato');
 Route::get('/login', function(){echo('teste');})->name('site.login');
 
 Route::prefix('/app')->group(function(){ 
