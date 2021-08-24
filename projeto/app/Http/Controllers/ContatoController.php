@@ -3,12 +3,34 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\SiteContato;
 
 class ContatoController extends Controller
 {
-    public function principal(){
+    public function principal(Request $request){
 
-        var_dump($_POST);
-        return view('site.contato', ['titulo' => 'Contato2']);
+        // echo("<pre>");
+        // print_r($request->input('nome'));
+        // echo("</pre>");
+        // return view('site.contato', ['titulo' => 'Contato2']);
+
+        // $contato = new SiteContato();
+        // $contato->nome = $request->input('nome');
+        // $contato->telefone = $request->input('telefone');
+        // $contato->email = $request->input('email');
+        // $contato->motivo_contato = $request->input('motivo_contato');
+        // $contato->mensagem = $request->input('mensagem');
+        //print_r($contato->getAttributes());
+        //$contato->save();
+
+        // $contato = new SiteContato();
+        // $contato->fill($request->all());
+        // $contato->save();
+
+        $contato = new SiteContato();
+        $contato->create($request->all());
+
+        //Create e Fill só funcionam caso o $fillable esteja definido no model
+
     }
 }
